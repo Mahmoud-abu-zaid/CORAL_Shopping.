@@ -5,20 +5,20 @@ export default function Brands() {
       <div className="py-[60px]">
         <div className="flex justify-center items-center flex-wrap">
           <Link to="/">
-            <img className="p-2" src="/public/imges/brand-1.png" alt="" />
+            <img className="p-2" src="/imges/brand-1.png" alt="" />
           </Link>
           <Link to="/"></Link>
           <Link to="/">
-            <img className="p-2" src="/public/imges/brand-2.png" alt="" />
+            <img className="p-2" src="/imges/brand-2.png" alt="" />
           </Link>
           <Link to="/">
-            <img className="p-2" src="/public/imges/brand-3.png" alt="" />
+            <img className="p-2" src="/imges/brand-3.png" alt="" />
           </Link>
           <Link to="/">
-            <img className="p-2" src="/public/imges/brand-5.png" alt="" />
+            <img className="p-2" src="/imges/brand-5.png" alt="" />
           </Link>
           <Link to="/">
-            <img className="p-2" src="/public/imges/brand-4.png" alt="" />
+            <img className="p-2" src="/imges/brand-4.png" alt="" />
           </Link>
         </div>
       </div>

@@ -11,11 +11,11 @@ export default function FollowProdcts() {
         <h2 className="text-center text-[35px] pb-8">Follow products and discounts on Instagram</h2>
         <div>
           <div className="flex justify-center items-center flex-wrap gap-4">
-            <img className="h-[140px] w-[150px]" src="/public/imges/07.png" alt="" />
-            <img className="h-[140px] w-[150px]" src="/public/imges/09.png" alt="" />
-            <img className="h-[140px] w-[150px]" src="/public/imges/10.png" alt="" />
-            <img className="h-[140px] w-[150px]" src="/public/imges/16.png" alt="" />
-            <img className="h-[140px] w-[150px]" src="/public/imges/09.png" alt="" />
+            <img className="h-[140px] w-[150px]" src="/imges/07.png" alt="" />
+            <img className="h-[140px] w-[150px]" src="/imges/09.png" alt="" />
+            <img className="h-[140px] w-[150px]" src="/imges/10.png" alt="" />
+            <img className="h-[140px] w-[150px]" src="/imges/16.png" alt="" />
+            <img className="h-[140px] w-[150px]" src="/imges/09.png" alt="" />
           </div>
           <div className="py-[40px]">
             <h2 className="text-[30px] text-center">Or subscribe to the newsletter</h2>

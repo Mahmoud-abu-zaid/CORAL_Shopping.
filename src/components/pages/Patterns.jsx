@@ -10,24 +10,24 @@ export default function Patterns() {
         <div className="flex justify-center items-center flex-wrap ">
           <div className="w-[500px]">
             <Link to="/">
-              <img src="/public/imges/07.png" alt="Discover patterns 1" />
+              <img src="/imges/07.png" alt="Discover patterns 1" />
             </Link>
           </div>
           <div className="flex justify-center items-center ">
             <div>
               <Link to="/">
-                <img src="/public/imges/16.png" alt="Discover patterns 2" className="w-[250px] h-[250px]" />
+                <img src="/imges/16.png" alt="Discover patterns 2" className="w-[250px] h-[250px]" />
               </Link>
               <Link to="/">
-                <img src="/public/imges/10.png" alt="Discover patterns 5" className="w-[250px] h-[250px]" />
+                <img src="/imges/10.png" alt="Discover patterns 5" className="w-[250px] h-[250px]" />
               </Link>
             </div>
             <div>
               <Link to="/">
-                <img src="/public/imges/09.png" alt="Discover patterns 4" className="w-[250px] h-[250px]" />
+                <img src="/imges/09.png" alt="Discover patterns 4" className="w-[250px] h-[250px]" />
               </Link>
               <Link to="/">
-                <img src="/public/imges/04.png" alt="Discover patterns 3" className="w-[250px] h-[250px]" />
+                <img src="/imges/04.png" alt="Discover patterns 3" className="w-[250px] h-[250px]" />
               </Link>
             </div>
           </div>

@@ -15,16 +15,16 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 py-3">
               <a href="#">
-                <img src="/public/imges/v6-icon (free).png" alt="" />
+                <img src="/imges/v6-icon (free).png" alt="" />
               </a>
               <a href="#">
-                <img src="/public/imges/v6-icon (free)-1.png" alt="" />
+                <img src="/imges/v6-icon (free)-1.png" alt="" />
               </a>
               <a href="#">
-                <img src="/public/imges/v6-icon (free)-2.png" alt="" />
+                <img src="/imges/v6-icon (free)-2.png" alt="" />
               </a>
               <a href="#">
-                <img src="/public/imges/v6-icon (free)-3.png" alt="" />
+                <img src="/imges/v6-icon (free)-3.png" alt="" />
               </a>
             </div>
           </div>
