@@ -1,11 +1,12 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
+import Filter from "../utils/Filter"
 export default function Prodect() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    getProdect();
+    getProdects();
   }, []);
-  async function getProdect() {
+  async function getProdects() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       if (response.status === 200) {
@@ -29,19 +30,24 @@ export default function Prodect() {
               All Prodect
             </Link>
           </div>
-          <div></div>
+          <div> 
+           
+          </div>
         </div>
         <div className="flex justify-center flex-wrap items-center">
           {data.map((Prodect) => {
             return (
               <>
-                <div className="p-2 ">
+                <div key={Prodect.id} className="p-2 ">
                   <img src={Prodect.image} alt="" className="w-[250px] h-[230px] pb-4" />
                   <h3 className="w-[320px]">{Prodect.title}</h3>
                   <div className="flex justify-between items-center">
                     <p className="text-[#867979]">{Prodect.category}</p>
                     <p className="text-[#27c862]">${Prodect.price}</p>
                   </div>
+                  <Link to={`/product/${Prodect.id}`} className="block text-center bg-slate-300 w-fit m-auto px-2 py-1 rounded mt-2">
+                    Detils
+                  </Link>
                 </div>
               </>
             );

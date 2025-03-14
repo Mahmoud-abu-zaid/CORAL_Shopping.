@@ -1,51 +1,96 @@
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-function App() {
-  const [category, setCategory] = useState("all");
+const SimpleFilterButton = () => {
 
-  const items = [
-    { id: 1, name: "آيفون", category: "موبايلات" },
-    { id: 2, name: "لابتوب", category: "إلكترونيات" },
-    { id: 3, name: "تيشيرت", category: "ملابس" },
-    { id: 4, name: "ساعة ذكية", category: "إلكترونيات" },
-    { id: 5, name: "حذاء رياضي", category: "ملابس" },
+
+
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
+      getProdects();
+    }, []);
+    async function getProdects() {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        if (response.status === 200) {
+          const data = await response.json();
+          setData(data);
+          console.log(data);
+        }
+      } catch (error) {
+        console.error("error from api call ", error);
+      } finally {
+        console.log("API success");
+      }}
+  // البيانات الأولية
+  
+  const initialData = [
+    { id: 1, name: 'Apple', category: 'Fruit' },
+    { id: 2, name: 'Banana', category: 'Fruit' },
+    { id: 3, name: 'Carrot', category: 'Vegetable' },
+    { id: 4, name: 'Tomato', category: 'Vegetable' },
+    { id: 5, name: 'Orange', category: 'Fruit' },
   ];
 
-  const filteredItems = category === "all" ? items : items.filter((item) => item.category === category);
+  // حالة لتخزين البيانات المصفاة
+  const [filteredData, setFilteredData] = useState(initialData);
+
+  // دالة للتصفية بناءً على الفئة
+  const filterByCategory = (category) => {
+    if (category === 'All') {
+      // إذا كانت الفئة "All"، نعرض جميع البيانات
+      setFilteredData(initialData);
+    } else {
+      // نقوم بتصفية البيانات بناءً على الفئة المحددة
+      const filtered = initialData.filter(item => item.category === category);
+      setFilteredData(filtered);
+    }
+  };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-100">
-      <h1 className="text-2xl font-bold mb-4">فلتر المنتجات</h1>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>Simple Filter with Button</h1>
 
-      <div className="mb-6 flex gap-3">
-        <button onClick={() => setCategory("all")} className="px-4 py-2 bg-blue-500 text-white rounded">
-          الكل
+      {/* أزرار التصفية */}
+      <div style={{ marginBottom: '20px' }}>
+        <button
+          onClick={() => filterByCategory('All')}
+          style={{ marginRight: '10px', padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
+        >
+          Show All
         </button>
-        <button onClick={() => setCategory("موبايلات")} className="px-4 py-2 bg-green-500 text-white rounded">
-          موبايلات
+        <button
+          onClick={() => filterByCategory('Fruit')}
+          style={{ marginRight: '10px', padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
+        >
+          Fruits Only
         </button>
-        <button onClick={() => setCategory("إلكترونيات")} className="px-4 py-2 bg-yellow-500 text-white rounded">
-          إلكترونيات
-        </button>
-        <button onClick={() => setCategory("ملابس")} className="px-4 py-2 bg-pink-500 text-white rounded">
-          ملابس
+        <button
+          onClick={() => filterByCategory('Vegetable')}
+          style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
+        >
+          Vegetables Only
         </button>
       </div>
 
-      <ul className="bg-white p-4 shadow rounded">
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item) => (
-            <li key={item.id} className="p-2 border-b">
-              {item.name} - <span className="text-gray-500">{item.category}</span>
-            </li>
-          ))
-        ) : (
-          <li className="text-gray-500 p-2">لا توجد نتائج</li>
-        )}
+      {/* عرض البيانات المصفاة */}
+      <ul style={{ listStyleType: 'none', padding: 0 }}>
+        {filteredData.map(item => (
+          <li
+            key={item.id}
+            style={{
+              padding: '10px',
+              border: '1px solid #ddd',
+              marginBottom: '10px',
+              borderRadius: '5px',
+            }}
+          >
+            {item.name} - {item.category}
+          </li>
+        ))}
       </ul>
     </div>
   );
-}
+};
 
-export default App;
-
+export default SimpleFilterButton;
