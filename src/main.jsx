@@ -11,6 +11,7 @@ import SingIn from "./components/pages/SingIn.jsx";
 import SingUp from "./components/pages/SingUp.jsx";
 
 createRoot(document.getElementById("root")).render(
+  
   <StrictMode>
     <BrowserRouter>
       <Header />

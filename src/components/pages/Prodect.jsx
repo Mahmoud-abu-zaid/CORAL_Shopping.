@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
-import Filter from "../utils/Filter"
+
 export default function Prodect() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function Prodect() {
           {data.map((Prodect) => {
             return (
               <>
-                <div key={Prodect.id} className="p-2 ">
+                <div key={Prodect.id} className="p-3 ">
                   <img src={Prodect.image} alt="" className="w-[250px] h-[230px] pb-4" />
                   <h3 className="w-[320px]">{Prodect.title}</h3>
                   <div className="flex justify-between items-center">

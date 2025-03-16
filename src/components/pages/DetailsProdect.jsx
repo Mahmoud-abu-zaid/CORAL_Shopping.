@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-export default function DetailsProdect() {
-  const [prodect, setPrdect] = useState({});
+export default function Detailsproduct() {
+  const [product, setProduct] = useState([]);
   const { id } = useParams();
   async function getProdect() {
     try {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       if (response.status === 200) {
-        const prodect = await response.json();
-        setPrdect(prodect);
-        console.log(prodect);
+        const product = await response.json();
+        setProduct(product);
+        console.log(product);
       }
     } catch (error) {
       console.error("error from api call ", error);
@@ -25,17 +25,17 @@ export default function DetailsProdect() {
     <>
       <div>
         <div className="flex justify-center flex-wrap items-center">
-          {prodect.map((Prodects) => {
+          {product.map((products) => {
             return (
               <>
-                <div key={Prodects.id} className="p-2 ">
-                  <img src={Prodects.image} alt="prodact" className="w-[250px] h-[230px] pb-4" />
-                  <h3 className="w-[320px]">{Prodects.title}</h3>
+                <div key={products.id} className="p-2 ">
+                  <img src={products.image} alt="prodact" className="w-[250px] h-[230px] pb-4" />
+                  <h3 className="w-[320px]">{products.title}</h3>
                   <div className="flex justify-between items-center">
-                    <p className="text-[#867979]">{Prodects.category}</p>
-                    <p className="text-[#27c862]">${Prodects.price}</p>
+                    <p className="text-[#867979]">{products.category}</p>
+                    <p className="text-[#27c862]">${products.price}</p>
                   </div>
-                  <Link to={`/product/${Prodects.id}`} className="block text-center bg-slate-300 w-fit m-auto px-2 py-1 rounded mt-2">
+                  <Link to={`/product/${products.id}`} className="block text-center bg-slate-300 w-fit m-auto px-2 py-1 rounded mt-2">
                     Detils
                   </Link>
                 </div>
