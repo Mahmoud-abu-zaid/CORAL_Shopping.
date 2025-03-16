@@ -16,8 +16,9 @@ export default function SingUp() {
       [name]: value,
     }));
   };
-  const handleSupmit = (e) => e.preventDefault();
+  const handleSupmit = (e) => {e.preventDefault();
   console.log("User Data", userData);
+  };
   return (
     <>
       <div className="flex justify-center items-center py-[70px] flex-wrap ">

@@ -1,12 +1,11 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
-
 export default function Prodect() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    getProdects();
+    getProducts();
   }, []);
-  async function getProdects() {
+  async function getProducts() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       if (response.status === 200) {
@@ -27,25 +26,22 @@ export default function Prodect() {
         <div className="flex justify-between p-4 m-6">
           <div>
             <Link to="/" className="text-[25px]">
-              All Prodect
+              All Product
             </Link>
-          </div>
-          <div> 
-           
           </div>
         </div>
         <div className="flex justify-center flex-wrap items-center">
-          {data.map((Prodect) => {
+          {data.map((Product) => {
             return (
               <>
-                <div key={Prodect.id} className="p-3 ">
-                  <img src={Prodect.image} alt="" className="w-[250px] h-[230px] pb-4" />
-                  <h3 className="w-[320px]">{Prodect.title}</h3>
+                <div key={Product.id} className="p-3 ">
+                  <img src={Product.image} alt="" className="w-[250px] h-[230px] pb-4" />
+                  <h3 className="w-[320px]">{Product.title}</h3>
                   <div className="flex justify-between items-center">
-                    <p className="text-[#867979]">{Prodect.category}</p>
-                    <p className="text-[#27c862]">${Prodect.price}</p>
+                    <p className="text-[#867979]">{Product.category}</p>
+                    <p className="text-[#27c862]">${Product.price}</p>
                   </div>
-                  <Link to={`/product/${Prodect.id}`} className="block text-center bg-slate-300 w-fit m-auto px-2 py-1 rounded mt-2">
+                  <Link to={`/product/${Product.id}`} className="block text-center bg-slate-300 w-fit m-auto px-2 py-1 rounded mt-2">
                     Detils
                   </Link>
                 </div>

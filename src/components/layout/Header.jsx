@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import Navpar from "./Navpar";
 
 export default function Header() {
-
   return (
     <>
       <div>
@@ -21,21 +20,20 @@ export default function Header() {
             <Link to="/SingIn" className="pl-5 ">
               <b>Sing in</b>
             </Link>
-            {/*  <Link to="/">
+          </div>
+        </nav>
+        <hr />
+        <nav className="flex justify-center "></nav>
+        <Navpar />
+      </div>
+    </>
+  );
+}
+{
+  /*  <Link to="/">
               <i className="fa-solid fa-bag-shopping"></i> <span>Shoping</span>
             </Link>
            <Link to="/">
               <i className="fa-solid fa-circle-user "></i> <span className="pr-5">Account</span>
-            </Link>*/}
-          </div>
-        </nav>
-        <hr />
-        <nav className="flex justify-center ">
-         
-        </nav>
-        <Navpar />
-
-      </div>
-    </>
-  );
+            </Link>*/
 }
