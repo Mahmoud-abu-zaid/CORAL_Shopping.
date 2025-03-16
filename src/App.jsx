@@ -10,6 +10,7 @@ function App() {
       <Brands />
       <Patterns />
       <Prodect />
+      
     </>
   );
 }
