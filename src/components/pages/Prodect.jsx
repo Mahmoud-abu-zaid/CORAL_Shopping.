@@ -35,7 +35,7 @@ export default function Prodect() {
             return (
               <>
                 <div key={Product.id} className="p-3 ">
-                  <img src={Product.image} alt="" className="w-[250px] h-[230px] pb-4" />
+                  <img src={Product.image} alt="" className="w-[250px] h-[230px] pb-4 m-auto" />
                   <h3 className="w-[320px]">{Product.title}</h3>
                   <div className="flex justify-between items-center">
                     <p className="text-[#867979]">{Product.category}</p>

@@ -9,17 +9,18 @@ import DetailsProdect from "./components/pages/DetailsProdect.jsx";
 import FollowProdcts from "./components/pages/FollowProdects.jsx";
 import SingIn from "./components/pages/SingIn.jsx";
 import SingUp from "./components/pages/SingUp.jsx";
+import Prodect from "./components/pages/Prodect.jsx";
 
 createRoot(document.getElementById("root")).render(
-  
   <StrictMode>
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<App />}  />
+        <Route path="/" element={<App />} />
         <Route path="/product/:id" element={<DetailsProdect />} />
         <Route path="/SingIn" element={<SingIn />} />
         <Route path="/SingUp" element={<SingUp />} />
+        <Route path="/Prodect" element={<Prodect />} />
       </Routes>
       <Footer />
     </BrowserRouter>
