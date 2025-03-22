@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
+import ButtonToCart from "../utils/ButtonToCart";
 export default function Prodect() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -36,14 +37,17 @@ export default function Prodect() {
               <>
                 <div key={Product.id} className="p-3 ">
                   <img src={Product.image} alt="" className="w-[250px] h-[230px] pb-4 m-auto" />
-                  <h3 className="w-[320px]">{Product.title}</h3>
-                  <div className="flex justify-between items-center">
+                  <h3 className="w-[310px]">{Product.title}</h3>
+                  <div className="flex justify-between">
                     <p className="text-[#867979]">{Product.category}</p>
                     <p className="text-[#27c862]">${Product.price}</p>
                   </div>
-                  <Link to={`/product/${Product.id}`} className="block text-center bg-slate-300 w-fit m-auto px-2 py-1 rounded mt-2">
-                    Detils
-                  </Link>
+                  <div className="flex justify-center">
+                    <Link to={`/product/${Product.id}`} className=" text-center bg-slate-300 h-[40px] w-[80px] m-3 p-2 rounded-xl">
+                      Detils
+                    </Link>
+                    <ButtonToCart />
+                  </div>
                 </div>
               </>
             );

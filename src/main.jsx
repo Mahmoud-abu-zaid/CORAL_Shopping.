@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import DetailsProdect from "./components/pages/DetailsProdect.jsx";
-import FollowProdcts from "./components/pages/FollowProdects.jsx";
 import SingIn from "./components/pages/SingIn.jsx";
 import SingUp from "./components/pages/SingUp.jsx";
 import Prodect from "./components/pages/Prodect.jsx";
