@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import Header from "../layout/Header";
 import ButtonToCart from "../utils/ButtonToCart";
 export default function Detailsproduct() {
   const [product, setProduct] = useState({});

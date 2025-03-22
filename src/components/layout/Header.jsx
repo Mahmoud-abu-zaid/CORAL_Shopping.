@@ -1,7 +1,5 @@
 import { Link } from "react-router";
 import Navpar from "./Navpar";
-import { Count } from "../Context/count";
-
 export default function Header() {
   return (
     <>
