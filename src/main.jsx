@@ -9,6 +9,7 @@ import DetailsProdect from "./components/pages/DetailsProdect.jsx";
 import SingIn from "./components/pages/SingIn.jsx";
 import SingUp from "./components/pages/SingUp.jsx";
 import Prodect from "./components/pages/Prodect.jsx";
+import VisaRegistration from "./components/utils/VisaRegistration.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/SingIn" element={<SingIn />} />
         <Route path="/SingUp" element={<SingUp />} />
         <Route path="/Prodect" element={<Prodect />} />
+        <Route path="/VisaRegistration" element={<VisaRegistration />} />
       </Routes>
       <Footer />
     </BrowserRouter>

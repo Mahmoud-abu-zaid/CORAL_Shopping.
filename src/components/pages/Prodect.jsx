@@ -46,7 +46,6 @@ export default function Prodect() {
                     <Link to={`/product/${Product.id}`} className=" text-center bg-slate-300 h-[40px] w-[80px] m-3 p-2 rounded-xl">
                       Detils
                     </Link>
-                    <ButtonToCart />
                   </div>
                 </div>
               </>

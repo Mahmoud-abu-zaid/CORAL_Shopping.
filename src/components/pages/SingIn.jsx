@@ -1,21 +1,29 @@
 import { useState } from "react";
-import { Link } from "react-router";
-
+import { Link, useNavigate } from "react-router";
 export default function SingIn() {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+  const hendleSupmit = (e) => {
+    e.preventDefault();
+    console.log("User Data ", userData);
+    const isLoggedIn = true;
+    if (isLoggedIn) {
+      localStorage.setItem("isLoggedIn", "true"); // حفظ حالة تسجيل الدخول
+      navigate("/VisaRegistration"); // حول المستخدم إلى Dashboard Component
+    } else {
+      alert("فشل تسجيل الدخول");
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  };
-  const hendleSupmit = (e) => {
-    e.preventDefault();
-    console.log("User Data ", userData);
   };
   return (
     <>
@@ -26,7 +34,9 @@ export default function SingIn() {
             <p className="pt-5 text-[15px]">
               if you don't have on account register <br />
               you can
-              <Link to="/SingUp" className="pl-2 text-[#4d47c3]">Register here !</Link>
+              <Link to="/SingUp" className="pl-2 text-[#4d47c3]">
+                Register here !
+              </Link>
             </p>
           </h2>
         </div>
@@ -34,13 +44,21 @@ export default function SingIn() {
           <form onSubmit={hendleSupmit}>
             <div>
               <input className="p-3 m-3 block sm:w-[75%] w-[100%] bg-[#f0efff] rounded-lg" type="email" required name="email" value={userData.email} onChange={handleChange} placeholder="Email" />
-              <input className="p-3 m-3 sm:w-[75%] w-[100%] bg-[#f0efff] rounded-lg" type="password" required name="password" value={userData.password} onChange={handleChange} placeholder="Password" />
+              <input
+                className="p-3 m-3 sm:w-[75%] w-[100%] bg-[#f0efff] rounded-lg"
+                type="password"
+                required
+                name="password"
+                value={userData.password}
+                onChange={handleChange}
+                placeholder="Password"
+              />
             </div>
             <div className="text-end sm:w-[75%] w-[100%] my-5">
               <Link className="text-[#c3c3c3] my-7">Forger Password ?</Link>
             </div>
             <button type="supmit" className="p-3 m-3 sm:w-[75%] w-[100%] bg-[#4d47c3] rounded-lg text-white">
-              log in
+              Log in
             </button>
           </form>
         </div>
