@@ -99,8 +99,8 @@ export default function VisaRegistration() {
               </div>
             </div>
             <div className="w-[100px] flex items-center justify-start">
-              <img src="/public/imges/Mastercard-Logo.wine.png" className="w-[180px] h-[90px]" alt="" />
-              <img src="/public/imges/remove.photos-removed-background (9).png" className="w-[180px] h-[130px]" alt="" />
+              <img src="/imges/Mastercard-Logo.wine.png" className="w-[180px] h-[90px]" alt="" />
+              <img src="/imges/remove.photos-removed-background (9).png" className="w-[180px] h-[130px]" alt="" />
             </div>
           </div>
           <button type="submit" className="w-[100%] p-2 bg-slate-200 rounded">
